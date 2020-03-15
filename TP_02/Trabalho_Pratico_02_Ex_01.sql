@@ -92,7 +92,7 @@ where Nome like 'Campo%';
 
 -- m
 Select * from CepBaixada
-where not Cidade in ('Santos', 'Cubat?o');
+where not Cidade in ('Santos', 'Cubat?o', 'Cubatão');
 
 -- n
 Select * from CepBaixada
@@ -108,10 +108,33 @@ Select MONTH(GETDATE());
 Select YEAR(GETDATE());
 
 -- r
-	
+Declare @nasc DATE;
+Set @nasc = '2001-06-24';
+Select (DATEDIFF(DAY, @nasc, GETDATE())) as 'Idade em dias';	
 
+-- s
+Select (DATEDIFF(WEEK, @nasc, GETDATE())) as 'Idade em semanas';	
 
+-- t
+Select (DATEDIFF(MINUTE, @nasc, GETDATE())) as 'Idade em minutos';
 
+-- u
+Select GETDATE() - 34;
 
+-- v
+Select GETDATE() + 120;
 
+-- w
+Select DATEADD(MONTH, 4, GETDATE()) as 'Data após 4 meses';
 
+-- x
+Select POWER(2,8);
+
+-- y
+Declare @raio decimal;
+Set @raio = 10;
+
+Select (2 * PI() * @raio) as 'Circunferencia';
+
+-- z
+Select POWER((Pi() * @raio), 2) as 'Area';
